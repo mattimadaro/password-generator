@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+}
+
+@font-face {
+    src: url(Karla-Regular.ttf);
+    font-family: "Karla";
+}
+
+@font-face {
+    src: url(Inter-Regular.otf);
+    font-family: 'Inter';
+}
+
+.pw-generator{
+    width: 550px;
+    height: 550px;
+    background: #1F2937;
+    margin: 0 auto;
+    padding: 115px 0 0 52px;
+}
+
+.heading {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    width: 354px;
+    height: 80px;
+}
+
+span {
+    color: #4ADF86;
+}
+
+h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #D5D4D8;
+}
+
+button {
+    width: 191px;
+    height: 42px;
+    background: #10B981;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    border: none;
+    padding: 9px 17px 9px 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.password-fields {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #2F3E53;
+    width: 446px;
+    margin-top: 35px;
+}
+
+.pw-fields {
+    width: 211px;
+    height: 39px;
+    background: #273549;
+    border-radius: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    color: #55F991;
+    padding-top: 10px;
+}
+
+.copy-btn {
+    margin-top: 10px;
+    width: 211px;
+}
+
+/*Control Panel*/
+.control-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 230px;
+    width: 446px;
+}
+
+/*Password Range Slider*/
+.pw-length {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 8px;
+    background: white;
+    outline: none;
+    opacity: .9;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 12px;   
+    margin-left: 5px; 
+    transition: 0.4s all ease-out;
+}
+
+.pw-length:hover {
+    opacity: 1;
+}
+
+.pw-length:after {
+    outline: none;
+}
+
+.pw-length::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #10B981;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: 0.4s all ease-out;
+}
+
+output{
+    color: white;
+    position: relative;
+    top: 3px;
+    left: 4px;
+}
+
+
+/*Toggle to switch on and off symbols and numbers*/
+label {
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    top: 440px;
+}
+
+.Switch {
+  position: absolute;
+  /* Set the size of our the slider container*/
+  width: 60px;
+  height: 34px;
+}
+
+.Slider {
+  position: absolute;
+  /* Change the cursor so the user knows they can click on the element */
+  cursor: pointer;
+  top: 0;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  /* The border-radius could be any value since we have specified the height and width 
+  but removing it would cause the container to have square corners */
+  border-radius: 1rem;
+  /* Default the background-color to lightgray unless the checkbox is in a checked state */
+  background-color: white;
+}
+
+.Switch_Input {
+  /* Hide the checkbox input from the user but keep it in the DOM */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* New selector for the circle pseudo-element */
+.Slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: #10B981;
+  transition: 0.3s;
+}
+
+
+.Switch_Input:checked + .Slider::before {
+  /* Move the circle pseudo-element from left to right and right to left when the input is checked */
+  transform: translateX(16px);
+  background-color: white;
+}
+
+.Switch_Input:checked + .Slider {
+  /* Change the color of the slider container when it is clicked (or checked) */
+  background-color: #10B981;
+}
+
+/*Tooltip*/
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity .1s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+.tooltip:active .tooltiptext {
+  visibility: visible;
+  opacity: 1; 
+}
